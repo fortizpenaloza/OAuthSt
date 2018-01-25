@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "AuthorizationGrant",
+	"category" : "Auth0-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"client"
+	],
+	"name" : "ResourceOwnerPasswordCredentialsGrant",
+	"type" : "normal"
+}
