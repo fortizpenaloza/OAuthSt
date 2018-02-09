@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OAuth-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"expectedResponses"
+	],
+	"name" : "ConfigurableResponsesHTTPClient",
+	"type" : "normal"
+}
