@@ -15,7 +15,7 @@ testGrantAccessTokenFailsWhenPasswordMissing
   "error_description": "Missing required parameter: password"
 }')).
 
-	authorizationGrant := ResourceOwnerPasswordCredentialsGrant
+	authorizationGrant := OldResourceOwnerPasswordCredentialsGrant
 		using:
 			(Auth0Client
 				named: 'BORT Authentication API'

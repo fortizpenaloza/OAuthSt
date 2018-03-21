@@ -1,13 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "TestCase",
-	"category" : "OAuth-Tests",
+	"category" : "OAuth2St-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"httpClient"
-	],
+	"instvars" : [ ],
 	"name" : "ResourceOwnerPasswordCredentialsGrantTest",
 	"type" : "normal"
 }

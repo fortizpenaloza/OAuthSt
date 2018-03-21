@@ -17,7 +17,7 @@ testGrantAccessTokenWithOpenIDScope
   "token_type": "Bearer"
 }')).
 
-	authorizationGrant := ResourceOwnerPasswordCredentialsGrant
+	authorizationGrant := OldResourceOwnerPasswordCredentialsGrant
 		using:
 			(Auth0Client
 				named: 'BORT Authentication API'

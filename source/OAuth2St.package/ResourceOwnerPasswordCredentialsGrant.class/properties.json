@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "OAuth2AuthorizationGrant",
+	"category" : "OAuth2St",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"client",
+		"scope",
+		"username",
+		"password"
+	],
+	"name" : "ResourceOwnerPasswordCredentialsGrant",
+	"type" : "normal"
+}

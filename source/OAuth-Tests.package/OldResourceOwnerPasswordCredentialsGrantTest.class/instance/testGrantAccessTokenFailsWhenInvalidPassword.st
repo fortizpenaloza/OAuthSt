@@ -14,7 +14,7 @@ testGrantAccessTokenFailsWhenInvalidPassword
   "error_description": "Wrong email or password."
 }')).
 
-	authorizationGrant := ResourceOwnerPasswordCredentialsGrant
+	authorizationGrant := OldResourceOwnerPasswordCredentialsGrant
 		using:
 			(Auth0Client
 				named: 'BORT Authentication API'

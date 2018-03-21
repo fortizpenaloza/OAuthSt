@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "AuthorizationGrant",
+	"super" : "OldAuthorizationGrant",
 	"category" : "OAuth-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,6 +8,6 @@
 	"instvars" : [
 		"client"
 	],
-	"name" : "ResourceOwnerPasswordCredentialsGrant",
+	"name" : "OldResourceOwnerPasswordCredentialsGrant",
 	"type" : "normal"
 }

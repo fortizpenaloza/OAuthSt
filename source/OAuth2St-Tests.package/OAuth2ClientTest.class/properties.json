@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "OAuth-Model",
+	"category" : "OAuth2St-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "AuthorizationGrant",
+	"name" : "OAuth2ClientTest",
 	"type" : "normal"
 }
