@@ -4,8 +4,12 @@ testInstanceCreation
 	| baseUrl authorizationEndpoint tokenEndpoint server |
 
 	baseUrl := 'https://mercap.auth0.com' asZnUrl.
-	authorizationEndpoint := baseUrl.
-	tokenEndpoint := baseUrl.
+	authorizationEndpoint := baseUrl
+		addPathSegment: 'auth';
+		yourself.
+	tokenEndpoint := baseUrl
+		addPathSegment: 'token';
+		yourself.
 
 	server := OAuth2AuthorizationServer
 		providingAuthorizationGrantsAt: authorizationEndpoint

@@ -3,7 +3,7 @@ testInstanceCreation
 
 	| redirectionEndpoint authorizationServer anIdentifier aSecret |
 
-	redirectionEndpoint := 'https://localhost:8080/sign-in'.
+	redirectionEndpoint := 'http://localhost:8080/sign-in' asZnUrl.
 	authorizationServer := nil.
 	anIdentifier := nil.
 	aSecret := nil.
