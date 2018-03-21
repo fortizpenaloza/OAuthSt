@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "BaselineOf",
-	"category" : "BaselineOfOAuth",
+	"category" : "BaselineOfOAuth2St",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BaselineOfOAuth",
+	"name" : "BaselineOfOAuth2St",
 	"type" : "normal"
 }

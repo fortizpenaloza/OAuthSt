@@ -11,4 +11,4 @@ baseline: spec
 			spec
 				group: 'Deployment' with: #('OAuth-Model');
 				group: 'Development' with: #('OAuth-Tests');
-				group: 'default' with: #('Deployment') ]
+				group: 'default' with: #('Development') ]
