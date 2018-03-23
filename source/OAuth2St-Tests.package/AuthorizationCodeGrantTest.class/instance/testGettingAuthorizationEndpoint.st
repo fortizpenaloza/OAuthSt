@@ -1,13 +1,13 @@
 tests
-testGettingAccessToken
+testGettingAuthorizationEndpoint
 
-	| baseUrl authorizationEndpoint tokenEndpoint redirectionEndpoint authorizationServer anIdentifier aSecret client httpClient authorizationGrant token |
+	| baseUrl authorizationEndpoint tokenEndpoint redirectionEndpoint authorizationServer anIdentifier aSecret client httpClient authorizationGrant token authorizationUrl response |
 
 	baseUrl := 'https://willow-demo.auth0.com' asZnUrl.
-	authorizationEndpoint := baseUrl
+	authorizationEndpoint := baseUrl copy 
 		addPathSegment: 'authorize';
 		yourself.
-	tokenEndpoint := baseUrl
+	tokenEndpoint := baseUrl copy 
 		addPathSegments: #('oauth' 'token');
 		yourself.
 
@@ -26,10 +26,13 @@ testGettingAccessToken
 		redirectingTo: redirectionEndpoint.
 	httpClient := ZnClient new beOneShot.
 
-	authorizationGrant := AuthorizationCodeGrant 
-		on: client
-		scopedTo: 'openid'.
-
+	authorizationGrant := AuthorizationCodeGrant on: client scopedTo: 'openid'.
+	
+	authorizationUrl := authorizationGrant authorizationUrl.
+	
+	response := ZnClient new get: authorizationUrl.
+	
+	response halt.
 	token := authorizationGrant performOn: httpClient.
 
 	self

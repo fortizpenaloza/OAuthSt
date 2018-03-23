@@ -1,4 +1,4 @@
 accessing
 authorizationEndpoint
 
-	^ authorizationEndpoint
+	^ authorizationEndpoint copy
