@@ -5,7 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"authorizationServer",
+		"identifer",
+		"secret",
+		"redirectUri"
+	],
 	"name" : "OAuth2Client",
 	"type" : "normal"
 }

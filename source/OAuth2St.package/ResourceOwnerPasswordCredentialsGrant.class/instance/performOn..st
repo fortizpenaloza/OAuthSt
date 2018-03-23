@@ -1,14 +1,23 @@
 as yet unclassified
-performOn: aHttpClient 
-	
-	aHttpClient 
-		beOneShot;
-		url: client tokenURL;
+performOn: aHttpClient
+
+	| response |
+
+	client performOn: aHttpClient.
+
+	aHttpClient
 		formAt: #grant_type put: self grantType;
-		formAt: #client_id put: client identifier;
-		formAt: #client_secret put: client secret;
 		formAt: #scope put: scope;
 		formAt: #username put: username;
 		formAt: #password put: password;
-		yourself. 
-		
+		yourself.
+
+	response := aHttpClient
+		post;
+		response.
+
+	^ response isSuccess
+		ifTrue: [ self accessTokenFrom: response ]
+		ifFalse: [ InvalidGrant new
+				tag: response;
+				signal ]

@@ -3,12 +3,12 @@ testInstanceCreation
 
 	| baseUrl authorizationEndpoint tokenEndpoint server |
 
-	baseUrl := 'https://mercap.auth0.com' asZnUrl.
+	baseUrl := 'https://willow-demo.auth0.com' asZnUrl.
 	authorizationEndpoint := baseUrl
-		addPathSegment: 'auth';
+		addPathSegment: 'authorize';
 		yourself.
 	tokenEndpoint := baseUrl
-		addPathSegment: 'token';
+		addPathSegments: #('oauth' 'token');
 		yourself.
 
 	server := OAuth2AuthorizationServer

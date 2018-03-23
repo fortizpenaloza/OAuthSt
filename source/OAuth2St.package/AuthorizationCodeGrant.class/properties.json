@@ -5,10 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"authorizationEndpoint",
-		"tokenEndpoint"
-	],
-	"name" : "OAuth2AuthorizationServer",
+	"instvars" : [ ],
+	"name" : "AuthorizationCodeGrant",
 	"type" : "normal"
 }

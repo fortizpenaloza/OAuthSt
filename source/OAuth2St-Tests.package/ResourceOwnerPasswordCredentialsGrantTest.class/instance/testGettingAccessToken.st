@@ -1,8 +1,7 @@
 tests
-testInstanceCreation
+testGettingAccessToken
 
-	|  baseUrl authorizationEndpoint tokenEndpoint redirectionEndpoint authorizationServer anIdentifier aSecret client |
-	
+	| baseUrl authorizationEndpoint tokenEndpoint redirectionEndpoint authorizationServer anIdentifier aSecret client httpClient authorizationGrant token |
 
 	baseUrl := 'https://willow-demo.auth0.com' asZnUrl.
 	authorizationEndpoint := baseUrl
@@ -25,3 +24,17 @@ testInstanceCreation
 		as: anIdentifier
 		sharing: aSecret
 		redirectingTo: redirectionEndpoint.
+	httpClient := ZnClient new beOneShot.
+
+	authorizationGrant := ResourceOwnerPasswordCredentialsGrant
+		on: client
+		scopedTo: 'profile'
+		using: 'f.ortiz@mercapsoftware.com'
+		and: 'sQ4-Hto-HMe-gmt'.
+
+	token := authorizationGrant performOn: httpClient.
+
+	self
+		assert: (token at: #access_token) equals: 'OMwvwW0OCjTqQTsliklaWAzpgvpTK-6X';
+		assert: (token at: #token_type) equals: 'Bearer';
+		assert: (token at: #expires_in) equals: 86400
