@@ -8,7 +8,7 @@ performOn: aHttpClient with: aRedirectUrl
 	aHttpClient
 		formAt: #grant_type put: self grantType;
 		formAt: #code put: (aRedirectUrl queryFields at: #code);
-		formAt: #redirect_uri put: 'http://localhost:8080/sign-in';
+		formAt: #redirect_uri put: client redirectUri printString;
 		yourself.
 
 	response := aHttpClient
