@@ -1,4 +1,0 @@
-accessing
-grantType
-
-	self subclassResponsibility 

@@ -1,4 +1,0 @@
-mocking
-response
-
-	^ expectedResponses removeFirst

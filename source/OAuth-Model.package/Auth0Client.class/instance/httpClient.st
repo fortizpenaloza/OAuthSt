@@ -1,4 +1,0 @@
-accessing
-httpClient
-
-	^ httpClientProvider value
