@@ -1,16 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "OAuth2AuthorizationGrant",
-	"category" : "OAuth2St-Grants",
+	"super" : "Object",
+	"category" : "OAuth2St-Requests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"client",
 		"scope",
 		"username",
 		"password"
 	],
-	"name" : "ResourceOwnerPasswordCredentialsGrant",
+	"name" : "ResourceOwnerPasswordCredentialsAccessTokenRequest",
 	"type" : "normal"
 }

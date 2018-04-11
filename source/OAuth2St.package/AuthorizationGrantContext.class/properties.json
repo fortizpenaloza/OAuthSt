@@ -1,14 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "OAuth2AuthorizationGrant",
+	"super" : "Object",
 	"category" : "OAuth2St-Grants",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"client",
-		"scopes"
+		"httpClient",
+		"client"
 	],
-	"name" : "AuthorizationCodeGrant",
+	"name" : "AuthorizationGrantContext",
 	"type" : "normal"
 }

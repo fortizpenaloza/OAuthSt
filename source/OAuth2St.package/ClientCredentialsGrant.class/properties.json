@@ -5,10 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"client",
-		"scopes"
-	],
-	"name" : "AuthorizationCodeGrant",
+	"instvars" : [ ],
+	"name" : "ClientCredentialsGrant",
 	"type" : "normal"
 }

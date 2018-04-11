@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "Error",
-	"category" : "OAuth2St",
+	"category" : "OAuth2St-Grants",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

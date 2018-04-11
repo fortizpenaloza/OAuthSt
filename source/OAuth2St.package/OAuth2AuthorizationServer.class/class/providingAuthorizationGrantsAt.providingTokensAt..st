@@ -1,4 +1,0 @@
-instance creation
-providingAuthorizationGrantsAt: anAuthorizationEndpoint providingTokensAt: aTokenEndpoint
-
-	^ self new initializeProvidingAuthorizationGrantsAt: anAuthorizationEndpoint providingTokensAt: aTokenEndpoint

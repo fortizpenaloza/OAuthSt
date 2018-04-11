@@ -1,11 +1,7 @@
 tests
 testInstanceCreationAndAccessing
 
-	| authorizationServer client |
-
-	authorizationServer := OAuth2AuthorizationServer
-		providingAuthorizationGrantsAt: self authorizationEndpoint
-		providingTokensAt: self tokenEndpoint.
+	| client |
 
 	client := OAuth2Client
 		registeredOn: authorizationServer
@@ -15,4 +11,5 @@ testInstanceCreationAndAccessing
 
 	self
 		assert: client authorizationUrl printString
-		equals: 'https://willow-demo.auth0.com/authorize?redirect_uri=http://localhost:8080/sign-in&client_id=7Q7lAA9XzkyMGUhqGa9RC3GcNfObXCqW'
+		equals:
+			'https://willow-demo.auth0.com/authorize?redirect_uri=http://localhost:8080/sign-in&client_id=7Q7lAA9XzkyMGUhqGa9RC3GcNfObXCqW'

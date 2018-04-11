@@ -12,8 +12,8 @@ testGettingAccessTokenWithOpenIDScope
 		yourself.
 
 	authorizationServer := OAuth2AuthorizationServer
-		providingAuthorizationGrantsAt: authorizationEndpoint
-		providingTokensAt: tokenEndpoint.
+		redirectingResourceOwnerForAuthorizationTo: authorizationEndpoint
+		andIssuingTokensAt: tokenEndpoint.
 
 	redirectionEndpoint := 'http://localhost:8080/sign-in' asZnUrl.
 	anIdentifier := '7Q7lAA9XzkyMGUhqGa9RC3GcNfObXCqW'.

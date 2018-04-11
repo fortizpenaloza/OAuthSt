@@ -1,4 +1,4 @@
-accessing endpoints
+accessing
 tokenEndpoint
 
 	^ self issuerUrl addPathSegments: #('oauth' 'token')

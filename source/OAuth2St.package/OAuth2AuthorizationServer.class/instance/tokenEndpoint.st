@@ -1,0 +1,4 @@
+accessing
+tokenEndpoint
+
+	^ tokenEndpoint copy 

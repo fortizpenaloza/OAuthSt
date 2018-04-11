@@ -1,0 +1,4 @@
+instance creation
+redirectingResourceOwnerForAuthorizationTo: anAuthorizationEndpoint andIssuingTokensAt: aTokenEndpoint
+
+	^ self new initializeRedirectingResourceOwnerForAuthorizationTo: anAuthorizationEndpoint andIssuingTokensAt: aTokenEndpoint

@@ -4,7 +4,9 @@ testInstanceCreationAndAccessing
 	| authorizationServer |
 
 	authorizationServer := OAuth2AuthorizationServer
-		providingAuthorizationGrantsAt: self authorizationEndpoint
-		providingTokensAt: self tokenEndpoint.
+		redirectingResourceOwnerForAuthorizationTo: self authorizationEndpoint
+		andIssuingTokensAt: self tokenEndpoint.
 
-	self assert: authorizationServer authorizationEndpoint equals: self authorizationEndpoint
+	self
+		assert: authorizationServer authorizationEndpoint equals: self authorizationEndpoint;
+		assert: authorizationServer tokenEndpoint equals: self tokenEndpoint
