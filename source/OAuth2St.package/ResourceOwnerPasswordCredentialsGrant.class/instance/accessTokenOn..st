@@ -1,5 +1,10 @@
 as yet unclassified
-accessTokenOn: anAuthorizationGrantContext
+accessTokenOn: aHttpClient
 
-	^ anAuthorizationGrantContext
-		sendHandlingErrors: (ResourceOwnerPasswordCredentialsAccessTokenRequest scopedTo: scope using: username and: password)
+	^ client
+		accessTokenSending:
+			(ResourceOwnerPasswordCredentialsAccessTokenRequest
+				scopedTo: scope
+				using: username
+				and: password)
+		using: aHttpClient
