@@ -2,5 +2,5 @@ tests
 setUp
 
 	authorizationServer := OAuth2AuthorizationServer
-		redirectingResourceOwnerForAuthorizationTo: self authorizationEndpoint
+		redirectingResourceOwnerForAuthorizationTo: self authorizationEndpoint 
 		andIssuingTokensAt: self tokenEndpoint

@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"dictionary"
-	],
-	"name" : "OAuth2AccessToken",
+	"instvars" : [ ],
+	"name" : "OAuth2Error",
 	"type" : "normal"
 }

@@ -4,4 +4,4 @@ initializeRegisteredOn: anOAuth2AuthorizationServer as: anIdentifier sharing: aS
 	authorizationServer := anOAuth2AuthorizationServer.
 	identifer := anIdentifier.
 	secret := aSecret.
-	redirectUri := aRedirectUri 
+	redirectUri := aRedirectUri

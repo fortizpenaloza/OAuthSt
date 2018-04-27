@@ -1,14 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
-	"category" : "OAuth2St-Grants",
+	"super" : "TestCase",
+	"category" : "OAuth2St-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"httpClient",
+		"authorizationServer",
 		"client"
 	],
-	"name" : "AuthorizationGrantContext",
+	"name" : "ClientCredentialsGrantTest",
 	"type" : "normal"
 }
