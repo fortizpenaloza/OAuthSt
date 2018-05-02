@@ -5,8 +5,7 @@ accessTokenUsing: aHttpClient applying: aNapCommand
 
 	aHttpClient url: authorizationServer tokenEndpoint.
 
-	aNapCommand + (BasicAuthentication with: identifer password: secret)
-		applyOn: aHttpClient.
+	aNapCommand + (BasicAuthentication with: identifer password: secret) applyOn: aHttpClient.
 
 	response := aHttpClient
 		post;
@@ -14,6 +13,4 @@ accessTokenUsing: aHttpClient applying: aNapCommand
 
 	^ response isSuccess
 		ifTrue: [ OAuth2AccessToken from: (STONJSON fromString: response contents) ]
-		ifFalse: [ response isBadRequest
-				ifTrue: [ OAuth2Error from: (STONJSON fromString: response contents) ]
-				ifFalse: [ InvalidGrant signal ] ]
+		ifFalse: [ OAuth2Error from: (STONJSON fromString: response contents) ]

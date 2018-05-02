@@ -1,5 +1,5 @@
 tests
-testGettingAccessToken
+testGettingErrorResponse
 
 	| authorizationGrant token |
 

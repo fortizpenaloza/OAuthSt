@@ -5,7 +5,9 @@ testGettingAccessToken
 
 	authorizationGrant := AuthorizationCodeGrant on: client scopedTo: 'openid'.
 
-	token := authorizationGrant accessTokenUsing: ZnClient new beOneShot.
+	token := authorizationGrant
+		accessTokenUsing: ZnClient new beOneShot
+		afterBeingRedirectedTo: '???'.
 
 	self
 		assert: token accessToken equals: 'OMwvwW0OCjTqQTsliklaWAzpgvpTK-6X';
