@@ -9,7 +9,7 @@ testGettingAccessToken
 		using: 'f.ortiz@mercapsoftware.com'
 		and: 'sQ4-Hto-HMe-gmt'.
 
-	token := authorizationGrant accessTokenUsing: ZnClient new beOneShot.
+	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
 
 	self
 		assert: token accessToken 

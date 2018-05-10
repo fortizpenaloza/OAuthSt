@@ -6,7 +6,7 @@ testGettingAccessToken
 	authorizationGrant := AuthorizationCodeGrant on: client scopedTo: 'openid'.
 
 	token := authorizationGrant
-		accessTokenUsing: ZnClient new beOneShot
+		issueAccessTokenUsing: ZnClient new beOneShot
 		afterBeingRedirectedTo: '???'.
 
 	self

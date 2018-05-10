@@ -1,5 +1,5 @@
 issuing access token
-accessTokenUsing: aHttpClient afterBeingRedirectedTo: aRedirectUri
+issueAccessTokenUsing: aHttpClient afterBeingRedirectedTo: aRedirectUri
 
 	| code redirectUri |
 

@@ -1,5 +1,5 @@
 issuing access token
-accessTokenUsing: aHttpClient
+issueAccessTokenUsing: aHttpClient
 
 	^ client
 		accessTokenUsing: aHttpClient

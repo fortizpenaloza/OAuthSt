@@ -5,7 +5,7 @@ testGettingErrorResponse
 
 	authorizationGrant := ClientCredentialsGrant on: client scopedTo: 'profile'.
 
-	token := authorizationGrant accessTokenUsing: ZnClient new beOneShot.
+	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
 
 	self
 		assert: token code equals: 'unauthorized_client';
