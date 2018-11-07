@@ -11,4 +11,4 @@ setUpDependencies: spec
 		baseline: 'TestHTTPClient'
 		with: [ spec
 				repository: 'github://fortizpenaloza/Test-HTTP-Client:master/source';
-				loads: #('De') ]
+				loads: #('Development') ]

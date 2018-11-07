@@ -3,9 +3,7 @@ issueAccessTokenUsing: aHttpClient afterBeingRedirectedTo: aRedirectUri
 
 	| code redirectUri |
 
-	self halt.
-
-	code := aRedirectUri queryFields at: #code.
+	code := aRedirectUri queryAt: #code.
 	redirectUri := client redirectUri printString.
 
 	^ client

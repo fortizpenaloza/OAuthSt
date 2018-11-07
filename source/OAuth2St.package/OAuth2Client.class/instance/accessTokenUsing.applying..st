@@ -5,7 +5,8 @@ accessTokenUsing: aHttpClient applying: aNapCommand
 
 	aHttpClient url: authorizationServer tokenEndpoint.
 
-	aNapCommand + (BasicAuthentication with: identifer password: secret) applyOn: aHttpClient.
+	aNapCommand + (BasicAuthentication with: identifer password: secret)
+		applyOn: aHttpClient.
 
 	response := aHttpClient
 		post;
