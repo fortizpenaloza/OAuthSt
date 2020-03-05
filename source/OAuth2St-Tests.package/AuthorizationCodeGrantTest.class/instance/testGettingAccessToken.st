@@ -3,8 +3,8 @@ testGettingAccessToken
 
 	| authorizationGrant token |
 
-	authorizationGrant := AuthorizationCodeGrant on: client scopedTo: 'openid'.
-	
+	authorizationGrant := AuthorizationCodeGrant on: client.
+
 	token := authorizationGrant
 		issueAccessTokenUsing: ZnClient new beOneShot
 		afterBeingRedirectedTo: 'http://localhost:8080/sign-in?code=XYZ' asZnUrl.

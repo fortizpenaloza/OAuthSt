@@ -5,4 +5,4 @@ issueAccessTokenUsing: aHttpClient
 		accessTokenUsing: aHttpClient
 		applying:
 			(AddFormFieldCommand named: #grant_type pairedTo: self grantType)
-				+ (AddFormFieldCommand named: #scope pairedTo: scope)
+				+ (AddFormFieldCommand named: #audience pairedTo: nil)

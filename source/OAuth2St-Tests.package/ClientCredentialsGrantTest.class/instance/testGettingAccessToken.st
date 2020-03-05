@@ -1,13 +1,20 @@
 tests
 testGettingAccessToken
 
-	| authorizationGrant token |
+	| authorizationGrant audience token |
 
-	authorizationGrant := ClientCredentialsGrant on: client scopedTo: 'profile'.
+	authorizationGrant := ClientCredentialsGrant on: client.
 
-	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
+	audience := ( 'https://willow-demo.auth0.com' asUrl addPathSegments: #('api' 'v2') ) printString
+		, '/'.
+
+	token := authorizationGrant
+		issueAccessTokenApplying: [ :grant | grant audience: audience ]
+		using: ZnClient new beOneShot.
 
 	self
-		assert: token code equals: 'unauthorized_client';
-		assert: token description equals: 'Grant type ''client_credentials'' not allowed for the client.';
-		assert: token uri equals: 'https://auth0.com/docs/clients/client-grant-types'
+		assert: token tokenType equals: 'Bearer';
+		assert: token scope
+			equals:
+			'read:users read:users_app_metadata update:users_app_metadata delete:users_app_metadata create:users_app_metadata';
+		assert: token expiresIn equals: 86400

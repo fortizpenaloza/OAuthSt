@@ -3,7 +3,7 @@ testGettingErrorResponse
 
 	| authorizationGrant token |
 
-	authorizationGrant := ClientCredentialsGrant on: client scopedTo: 'profile'.
+	authorizationGrant := ClientCredentialsGrant on: client.
 
 	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
 
