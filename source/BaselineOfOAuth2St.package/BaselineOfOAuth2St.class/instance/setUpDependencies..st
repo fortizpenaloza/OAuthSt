@@ -2,10 +2,10 @@ baselines
 setUpDependencies: spec
 
 	spec
-		baseline: 'Nap'
+		baseline: 'Superluminal'
 		with: [ spec
-				repository: 'github://fortizpenaloza/Nap:master/source';
-				loads: #('default') ].
+				repository: 'github://ba-st/Superluminal:release-candidate/source';
+				loads: #('Deployment') ].
 
 	spec
 		baseline: 'TestHTTPClient'

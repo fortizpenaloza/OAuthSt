@@ -6,7 +6,7 @@ baseline: spec
 		for: #common
 		do: [ self setUpDependencies: spec.
 			spec
-				package: 'OAuth2St' with: [ spec requires: #('Nap') ];
+				package: 'OAuth2St' with: [ spec requires: #('Superluminal') ];
 				package: 'OAuth2St-Tests' with: [ spec requires: #('OAuth2St' 'TestHTTPClient') ].
 			spec
 				group: 'Deployment' with: #('OAuth2St');
