@@ -1,19 +1,15 @@
 tests
 testGettingAccessToken
 
-	| authorizationGrant audience token |
+	| authorizationGrant token |
 
-	authorizationGrant := ClientCredentialsGrant on: client.
-
-	audience := ( 'https://willow-demo.auth0.com' asUrl addPathSegments: #('api' 'v2') ) printString
-		, '/'.
-
-	token := authorizationGrant
-		issueAccessTokenApplying: [ :grant | grant audience: audience ]
-		using: ZnClient new beOneShot.
-
+	authorizationGrant := ClientCredentialsGrant
+		on: client
+		configuredBy: [ :grant | grant audience: self audienceUri ].
+	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
 	self
 		assert: token tokenType equals: 'Bearer';
+		assert: token printString notEmpty;
 		assert: token scope
 			equals:
 			'read:users read:users_app_metadata update:users_app_metadata delete:users_app_metadata create:users_app_metadata';

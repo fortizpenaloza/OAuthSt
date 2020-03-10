@@ -1,8 +1,15 @@
-issuing access token
-issueAccessTokenUsing: aHttpClient
+as yet unclassified
+issueAccessTokenUsing: anHttpClient
 
-	^ client
-		accessTokenUsing: aHttpClient
-		applying:
-			(AddFormFieldCommand named: #grant_type pairedTo: self grantType)
-				+ (AddFormFieldCommand named: #audience pairedTo: nil)
+	| request response |
+
+	request := client
+		httpRequestConfiguredToIssueAccessTokenApplying:
+			( AddFormFieldCommand named: #grant_type pairedTo: self grantType )
+				+ configurationBlock asHttpRequestCommand.
+
+	response := request applyOn: anHttpClient.
+
+	^ response isSuccess
+		ifTrue: [ OAuth2AccessToken from: ( NeoJSONObject fromString: response contents ) ]
+		ifFalse: [ InvalidGrant signal: ( OAuth2Error from: ( NeoJSONObject fromString: response contents ) ) ]

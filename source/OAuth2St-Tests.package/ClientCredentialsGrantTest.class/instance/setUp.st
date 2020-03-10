@@ -7,6 +7,6 @@ setUp
 
 	client := OAuth2Client
 		registeredOn: authorizationServer
-		as: 'B2GXs14RBmL8vygQ1KvfGfsZMf3p6LKw'
-		sharing: 'rzujtYDfLDfOPScb9sxicVGdudHXwGcodLIOCXIIPNyjRxNq_kcIumTBAG6H2tP1'
+		as: 'q2sttiUzHCGIw8YUBYUfukGzsOHNqreb'
+		sharing: 'vKaSPV-W4lU3nhTe0U33YeUfloCEt8xjAxytFmw7E66gFA-R22rSPlLN1nEDiffz'
 		redirectingTo: 'http://localhost:8080/sign-in' asZnUrl
