@@ -1,13 +1,16 @@
 tests
 testGettingErrorResponse
 
-	| authorizationGrant token |
+	| authorizationGrant |
 
-	authorizationGrant := ClientCredentialsGrant on: client.
-
-	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
+	authorizationGrant := ClientCredentialsGrant on: client configuredBy: [ :grant |  ].
 
 	self
-		assert: token code equals: 'unauthorized_client';
-		assert: token description equals: 'Grant type ''client_credentials'' not allowed for the client.';
-		assert: token uri equals: 'https://auth0.com/docs/clients/client-grant-types'
+		should: [ authorizationGrant issueAccessTokenUsing: self httpClient ]
+		raise: InvalidGrant
+		withExceptionDo: [ :signal | 
+			self
+				assert: signal tag code equals: 'access_denied';
+				assert: signal tag description equals: 'Non-global clients are not allowed access to APIv1';
+				assert: signal tag uri equals: nil
+			]

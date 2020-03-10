@@ -10,7 +10,7 @@ testGettingAccessToken
 		afterBeingRedirectedTo: 'http://localhost:8080/sign-in?code=XYZ' asZnUrl.
 
 	self
-		assert: token accessToken equals: 'OMwvwW0OCjTqQTsliklaWAzpgvpTK-6X';
+		assert: token accessToken notEmpty;
 		assert: token tokenType equals: 'Bearer';
 		assert: token expiresIn equals: 86400;
 		deny: token hasRefreshToken

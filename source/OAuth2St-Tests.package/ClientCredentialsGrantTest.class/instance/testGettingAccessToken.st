@@ -6,7 +6,8 @@ testGettingAccessToken
 	authorizationGrant := ClientCredentialsGrant
 		on: client
 		configuredBy: [ :grant | grant audience: self audienceUri ].
-	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
+	token := authorizationGrant issueAccessTokenUsing: self httpClient.
+	
 	self
 		assert: token tokenType equals: 'Bearer';
 		assert: token printString notEmpty;

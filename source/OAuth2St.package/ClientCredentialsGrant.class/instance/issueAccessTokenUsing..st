@@ -12,4 +12,8 @@ issueAccessTokenUsing: anHttpClient
 
 	^ response isSuccess
 		ifTrue: [ OAuth2AccessToken from: ( NeoJSONObject fromString: response contents ) ]
-		ifFalse: [ InvalidGrant signal: ( OAuth2Error from: ( NeoJSONObject fromString: response contents ) ) ]
+		ifFalse: [ | error |
+
+			error := OAuth2Error from: ( NeoJSONObject fromString: response contents ).
+			InvalidGrant signal: error description withTag: error
+			]

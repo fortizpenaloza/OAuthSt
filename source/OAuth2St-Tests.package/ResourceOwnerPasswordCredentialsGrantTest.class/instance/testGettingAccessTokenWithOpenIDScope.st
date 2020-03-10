@@ -5,15 +5,15 @@ testGettingAccessTokenWithOpenIDScope
 
 	authorizationGrant := ResourceOwnerPasswordCredentialsGrant
 		on: client
-		scopedTo: 'openid'
-		using: 'f.ortiz@mercapsoftware.com'
-		and: 'sQ4-Hto-HMe-gmt'.
+		using: 'fran@ortizpenaloza.com.ar'
+		and: 'sQ4-Hto-HMe-gmt'
+		configuredBy: [:grant | grant scope: #('openid') ]..
 
-	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
+	token := authorizationGrant issueAccessTokenUsing: self httpClient.
 
 	self
-		assert: token accessToken equals: 'OMwvwW0OCjTqQTsliklaWAzpgvpTK-6X';
+		assert: token accessToken notEmpty;
 		assert: token tokenType equals: 'Bearer';
 		assert: token expiresIn equals: 86400;
 		assert: token scope equals: 'openid profile email address phone';
-		deny: token hasRefreshToken.
+		deny: token hasRefreshToken

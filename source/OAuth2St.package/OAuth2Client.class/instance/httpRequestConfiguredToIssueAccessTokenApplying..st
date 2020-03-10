@@ -1,9 +1,6 @@
-as yet unclassified
-httpRequestConfiguredToIssueAccessTokenApplying: aBlock
+configuring
+httpRequestConfiguredToIssueAccessTokenApplying: aConfiguration
 
 	^ HttpRequest
 		post: authorizationServer tokenEndpoint
-		configuredUsing: [ :request | 
-			( AddFormFieldCommand named: #client_id pairedTo: identifer )
-				+ ( AddFormFieldCommand named: #client_secret pairedTo: secret ) + aBlock 
-			]
+		configuredUsing: [ :request | ( SetBasicAuthenticationCommand with: identifer password: secret ) + aConfiguration ]
