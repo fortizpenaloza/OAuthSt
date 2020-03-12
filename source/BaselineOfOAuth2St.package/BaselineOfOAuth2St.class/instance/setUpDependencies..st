@@ -6,6 +6,12 @@ setUpDependencies: spec
 		with: [ spec
 				repository: 'github://ba-st/Superluminal:release-candidate/source';
 				loads: #('Deployment') ].
+			
+	spec
+		baseline: 'NeoJSON'
+		with: [ spec
+				repository: 'github://svenvc/NeoJSON:master/repository';
+				loads: #('core') ].
 
 	spec
 		baseline: 'TestHTTPClient'
