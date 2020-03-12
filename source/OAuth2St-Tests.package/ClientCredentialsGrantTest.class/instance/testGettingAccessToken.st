@@ -3,11 +3,15 @@ testGettingAccessToken
 
 	| authorizationGrant token |
 
-	authorizationGrant := ClientCredentialsGrant on: client scopedTo: 'profile'.
-
-	token := authorizationGrant issueAccessTokenUsing: ZnClient new beOneShot.
-
+	authorizationGrant := ClientCredentialsGrant
+		on: client
+		configuredBy: [ :grant | grant audience: self audienceUri ].
+	token := authorizationGrant issueAccessTokenUsing: self httpClient.
+	
 	self
-		assert: token code equals: 'unauthorized_client';
-		assert: token description equals: 'Grant type ''client_credentials'' not allowed for the client.';
-		assert: token uri equals: 'https://auth0.com/docs/clients/client-grant-types'
+		assert: token tokenType equals: 'Bearer';
+		assert: token printString notEmpty;
+		assert: token scope
+			equals:
+			'read:users read:users_app_metadata update:users_app_metadata delete:users_app_metadata create:users_app_metadata';
+		assert: token expiresIn equals: 86400

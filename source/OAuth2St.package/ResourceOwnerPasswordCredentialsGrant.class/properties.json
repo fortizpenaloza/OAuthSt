@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "fortizpenaloza 3/10/2020 16:17",
 	"super" : "OAuth2AuthorizationGrant",
 	"category" : "OAuth2St-Grants",
 	"classinstvars" : [ ],
@@ -9,7 +9,8 @@
 		"client",
 		"scope",
 		"username",
-		"password"
+		"password",
+		"configurationBlock"
 	],
 	"name" : "ResourceOwnerPasswordCredentialsGrant",
 	"type" : "normal"
